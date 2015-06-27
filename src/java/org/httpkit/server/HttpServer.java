@@ -221,6 +221,7 @@ public class HttpServer implements Runnable {
             if (atta.toWrites.isEmpty()) {
                 SocketChannel ch = (SocketChannel) key.channel();
                 try {
+                    ((SocketChannel) key.channel()).socket().setTcpNoDelay(true); // customized for no delay
                     // TCP buffer most of time is empty, writable(8K ~ 256k)
                     // One IO thread => One thread reading + Many thread writing
                     // Save 2 system call
