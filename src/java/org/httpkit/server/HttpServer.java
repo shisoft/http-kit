@@ -175,6 +175,7 @@ public class HttpServer implements Runnable {
         ServerAtta atta = (ServerAtta) key.attachment();
         SocketChannel ch = (SocketChannel) key.channel();
         try {
+            ((SocketChannel) key.channel()).socket().setTcpNoDelay(true); // customized for no delay
             // the sync is per socket (per client). virtually, no contention
             // 1. keep byte data order, 2. ensure visibility
             synchronized (atta) {
