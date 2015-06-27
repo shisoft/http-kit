@@ -1,4 +1,4 @@
-(defproject http-kit "2.1.18"
+(defproject http-kit "2.1.18-NO_DELAY"
   :description "High-performance event-driven HTTP client/server for Clojure"
   :dependencies [[org.clojure/clojure "1.4.0"]]
   :warn-on-reflection true
